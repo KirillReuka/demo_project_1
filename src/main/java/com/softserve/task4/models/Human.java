@@ -16,7 +16,15 @@ public class Human {
     }
 
     public boolean speak(Human human) {
-
+        if (!this.isGender() && !human.isGender()) {
+            return true;
+        } else if (!this.isGender() && human.isGender()) {
+            return true;
+        } else if (this.isGender() && !human.isGender()) {
+            return true;
+        } else if (this.isGender() && human.isGender()) {
+            return Math.random() >= 0.5; // 0.5
+        }
         return true;
     }
 
