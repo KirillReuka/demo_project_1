@@ -39,9 +39,12 @@ public class Human {
         }
     }
 
-    protected boolean spendTimeTogether(Human human) {
-
-        return true;
+    public boolean spendTimeTogether(Human human) {
+        if ((((human.getHeight() / this.getHeight()) * 100) - 100) <= 10) {
+            return Math.random() <= 0.95;
+        } else {
+            return Math.random() <= 0.85;
+        }
     }
 
     public Human haveRelationship(Human human) {
