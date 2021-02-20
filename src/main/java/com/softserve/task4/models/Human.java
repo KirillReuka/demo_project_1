@@ -1,13 +1,16 @@
 package com.softserve.task4.models;
 
+import com.softserve.task4.Test;
+import sun.net.TelnetInputStream;
+
 public class Human {
     protected boolean gender;
     protected String firstName;
     protected String lastName;
-    protected float height;
-    protected float weight;
+    protected double height;
+    protected double weight;
 
-    public Human(boolean gender, String firstName, String lastName, float height, float weight) {
+    public Human(boolean gender, String firstName, String lastName, double height, double weight) {
         this.gender = gender;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -47,10 +50,11 @@ public class Human {
         }
     }
 
-    public Human haveRelationship(Human human) {
-
-        return null;
-    }
+//    public Human haveRelationship(Human human) {
+//        if (this.speak(human) && this.tolerate(human) && this.spendTimeTogether(human)) {
+//            return Human
+//        }
+//    }
 
     public boolean isGender() {
         return gender;
@@ -76,7 +80,7 @@ public class Human {
         this.lastName = lastName;
     }
 
-    public float getHeight() {
+    public double getHeight() {
         return height;
     }
 
@@ -84,7 +88,7 @@ public class Human {
         this.height = height;
     }
 
-    public float getWeight() {
+    public double getWeight() {
         return weight;
     }
 
