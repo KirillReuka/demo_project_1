@@ -22,15 +22,21 @@ public class Human {
             return true;
         } else if (this.isGender() && !human.isGender()) {
             return true;
-        } else if (this.isGender() && human.isGender()) {
-            return Math.random() >= 0.5; // 0.5
+        } else {
+            return Math.random() <= 0.5;
         }
-        return true;
     }
 
-    protected boolean tolerate(Human human) {
-
-        return true;
+    public boolean tolerate(Human human) {
+        if (!this.isGender() && !human.isGender()) {
+            return Math.random() <= 0.05;
+        } else if (!this.isGender() && human.isGender()) {
+            return Math.random() <= 0.7;
+        } else if (this.isGender() && !human.isGender()) {
+            return Math.random() <= 0.7;
+        } else  {
+            return Math.random() <= 0.056;
+        }
     }
 
     protected boolean spendTimeTogether(Human human) {
