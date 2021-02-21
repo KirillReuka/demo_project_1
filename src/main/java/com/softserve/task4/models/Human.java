@@ -1,8 +1,5 @@
 package com.softserve.task4.models;
 
-import com.softserve.task4.Test;
-import sun.net.TelnetInputStream;
-
 public class Human {
     protected boolean gender;
     protected String firstName;
@@ -37,7 +34,7 @@ public class Human {
             return Math.random() <= 0.7;
         } else if (this.isGender() && !human.isGender()) {
             return Math.random() <= 0.7;
-        } else  {
+        } else {
             return Math.random() <= 0.056;
         }
     }
@@ -50,11 +47,19 @@ public class Human {
         }
     }
 
-//    public Human haveRelationship(Human human) {
-//        if (this.speak(human) && this.tolerate(human) && this.spendTimeTogether(human)) {
-//            return Human
-//        }
-//    }
+    public Human haveRelationship(Human human) {
+        if (this instanceof Man && human instanceof Woman) {
+            if (this.speak(human) && this.tolerate(human) && this.spendTimeTogether(human)) {
+                return (((Woman) human).giveBirthTo(this, human));
+            }
+        }
+        if (this instanceof Woman && human instanceof Man) {
+            if (this.speak(human) && this.tolerate(human) && this.spendTimeTogether(human)) {
+                return (((Woman) this).giveBirthTo(this, human));
+            }
+        }
+        return null;
+    }
 
     public boolean isGender() {
         return gender;
